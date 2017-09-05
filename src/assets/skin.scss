@@ -1,0 +1,233 @@
+blockquote, body, button, dd, dl, dt, fieldset, h1, h2, h3, h4, h5, h6, hr, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 10px;
+}
+
+@media screen and (min-width:321px) and (max-width:374px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:375px) and (max-width:434px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:435px) and (max-width:639px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:719px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width:720px) and (max-width:749px) {
+    html {
+        font-size: 22.5px;
+    }
+}
+
+@media screen and (min-width:750px) {
+    html {
+        font-size: 15px;
+    }
+}
+$defaultColor:#009193;
+$white:#fff;
+$gary:#dbdbdb;
+$black:#000;
+$red:#f00;
+$bg333:#333;
+$g666:#666;
+$gbf4f1ec:#f4f1ec;
+
+@function pxToRem($px) {
+    @return $px/12/2+rem;
+}
+
+@mixin btn {
+    //按钮
+    width: 94%;
+    margin: pxToRem(40) auto;
+    height: pxToRem(80);
+    line-height: pxToRem(80);
+    border: 0;
+    display: block;
+    color: $white;
+    background: $red;
+    font-size: pxToRem(32);
+    text-align: center;
+}
+
+
+
+/* 首页 */
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 1999;
+}
+
+.top {
+    height: 50px;
+    font-family: "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    line-height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $bg333;
+    z-index: 1999
+}
+
+.top a {
+    color: $white;
+    text-decoration:none;
+}
+
+.top .logo {
+    position: absolute;
+    left: 0
+}
+
+.top .logousername {
+    padding-right: 14px
+}
+
+.top .logoImg {
+    height: 20px;
+    width: auto;
+    padding-left: 14px;
+    vertical-align: middle;
+}
+.top .login{
+    color:$white;
+    padding-right:14px;
+}
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+body {
+    height: 100%;
+    line-height: 1.8;
+    font-size: pxToRem(24);
+    background-color: $gbf4f1ec;
+}
+
+a {
+    color: $g666;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input,button,a {
+    tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-appearance: none;
+}
+
+.clearfix {
+    &:before {
+        content: ' ';
+        display: table;
+    }
+    &:after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+}
+
+.t_l {
+    text-align: left;
+}
+
+.t_c {
+    text-align: center;
+}
+
+.t_r {
+    text-align: right;
+}
+
+.left,
+.fl {
+    float: left;
+}
+
+.right,
+.fr {
+    float: right;
+}
+ul {
+    list-style: none;
+}
+li {
+    list-style-type: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.myFooter {
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    text-align: center;
+    z-index: 1999;
+    height: 49px;
+    border-top: 1px solid #dedede;
+    background: #fefefe;
+
+    ul {
+        li {
+            padding-top: 4px;
+            list-style-type: none;
+            width: 33.3333%;
+            height: 49px;
+            line-height: 49px;
+            float: left;
+            text-align: center;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            color: $gary;
+        }
+        a:first-child {
+            li {
+                border-left: none
+            }
+        }
+        a.router-link-active {
+            li {
+                color: $defaultColor;
+            }
+        }
+    }
+}
+
+.content{
+    min-height:100%;
+    overflow: hidden;
+    padding-top:50px;
+}
