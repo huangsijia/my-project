@@ -1,6 +1,6 @@
 <template>
   <div class="main-body">
-    <my-header :title="title" :leftIcon="leftIcon" :rightIcon="rightIcon"></my-header>
+    <my-header :title="title" :hideLeftFlag="hideLeftFlag"></my-header>
     <div class="content">
       <router-view></router-view>
     </div>
@@ -9,19 +9,23 @@
 </template>
 
 <script>
+import 'mint-ui/lib/style.css'
 import header from './components/public/header.vue'
 import footer from './components/public/footer.vue'
+import { Field,Toast,MessageBox } from 'mint-ui';
 
 export default {
   components: {
     myHeader:header,
-    myFooter:footer
+    myFooter:footer,
+    mtField:Field,
+    Toast,
+    MessageBox
   },
   data() {
     return {
       title: "",
-      leftIcon: "",
-      rightIcon: ""
+      hideLeftFlag: true
     }
   },
   methods:{
@@ -31,14 +35,10 @@ export default {
     }
   },
   beforeCreate: function() {
-    window.Hub.$on('setTitle',(title,leftIcon,rightIcon) => {
-      this.leftIcon = leftIcon;
-      this.rightIcon = rightIcon;
+    window.Hub.$on('setTitle',(title,hideLeftFlag) => {
       this.setTitle(title);
-    })
+      this.hideLeftFlag = hideLeftFlag;
+    });
   }
 }
 </script>
-<style lang='sass-loader'>
-  @import './assets/skin'
-</style>

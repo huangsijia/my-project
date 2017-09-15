@@ -23,9 +23,27 @@ const routerOption = {
       }
     },
     {
-      path: '/home/login',
+      path: '/index/login',
       component: (resolve) => {
-        require(['./components/home/login.vue'], resolve)
+        require(['./components/index/login.vue'], resolve)
+      }
+    },
+    {
+      path: '/index/forget',
+      component: (resolve) => {
+        require(['./components/index/forget.vue'], resolve)
+      }
+    },
+    {
+      path: '/index/register',
+      component: (resolve) => {
+        require(['./components/index/register.vue'], resolve)
+      }
+    },
+    {
+      path: '/index/resetPwd',
+      component: (resolve) => {
+        require(['./components/index/resetPwd.vue'], resolve)
       }
     }
   ]

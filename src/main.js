@@ -3,7 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from "vue-router";
+import Public from './js/public.js';
+import { InfiniteScroll } from 'mint-ui';
+Vue.use(InfiniteScroll);
 
+
+window.Public = Public;
 window.Vue = Vue;
 Vue.use(VueRouter);
 import routerOption from './router.js'
@@ -12,6 +17,7 @@ const router = new VueRouter(routerOption);
 window.Hub = new Vue();
 
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 const app = new Vue({
