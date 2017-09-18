@@ -31,11 +31,7 @@ export default {
             tel:"",
             picVerify:"",
             verification:"",
-            telCheck:"",
-            picCheck:"",
-            msgCheck:"",
-            red:"red",
-            
+            red:"red",            
             telCheck:false,
             picCheck:false,
             msgCheck:false,
@@ -61,9 +57,9 @@ export default {
     computed:{
         'disabled':{
              get: function () {
-                var abc= !this.telCheck || !this.picCheck || !this.msgCheck
-                console.log(abc)
-                return abc
+                var btnDisabled= !this.telCheck || !this.picCheck || !this.msgCheck
+                console.log(btnDisabled)
+                return btnDisabled
                 },
                 // setter
             set: function (newValue) {
